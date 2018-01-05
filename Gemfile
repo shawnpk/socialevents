@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
+  gem 'capybara', '~> 2.17'
 end
 
 group :development do
@@ -23,6 +26,12 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+  gem 'better_errors', '~> 2.4'
+end
+
+group :test do
+  gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

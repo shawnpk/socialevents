@@ -1,4 +1,4 @@
-<h1>Events</h1>
+<h1>SocialEvents</h1>
 
 <%= link_to 'Add Event', new_event_path %>
 
@@ -6,8 +6,8 @@
   <div>
     <h4><%= link_to event.title, event_path(event) %></h4>
     <p><%= event.description %></p>
-    <p><%= event.start_date %></p>
-    <p><%= event.end_date %></p>
+    <p><%= format_date(event.start_date) %></p>
+    <p><%= format_date(event.end_date) %></p>
     <p><%= event.venue %></p>
     <p><%= event.location %></p>
   </div>

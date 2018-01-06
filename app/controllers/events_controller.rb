@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: [:show, :edit, :update]
   def index
     @events = Event.all
   end
@@ -11,6 +11,9 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def edit
+  end
+
   def create
     @event = Event.new(event_params)
 
@@ -20,6 +23,16 @@ class EventsController < ApplicationController
     else
       flash.now[:alert] = 'Event not created. Please try again.'
       render :new
+    end
+  end
+
+  def update
+    if @event.update(event_params)
+      flash[:notice] = 'Event successfully updated.'
+      redirect_to @event
+    else
+      flash.now[:alert] = 'There was a problem updating the event.'
+      render :edit
     end
   end
 

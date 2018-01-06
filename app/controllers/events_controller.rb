@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
     @events = Event.all
   end
@@ -34,6 +34,12 @@ class EventsController < ApplicationController
       flash.now[:alert] = 'There was a problem updating the event.'
       render :edit
     end
+  end
+
+  def destroy
+    @event.destroy
+    flash[:alert] = 'The event has been deleted.'
+    redirect_to root_path
   end
 
   private

@@ -9,12 +9,12 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% else %>
-      <div class='alert'><%= flash[:alert] %></div>
+    <% flash.each do |type, message| %>
+      <div><%= message %></div>
     <% end %>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

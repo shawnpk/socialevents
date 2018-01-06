@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.4.3'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -18,7 +20,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
   gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
-  gem 'capybara', '~> 2.17'
 end
 
 group :development do
@@ -28,6 +29,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
   gem 'better_errors', '~> 2.4'
+  gem 'capybara', '~> 2.17'
 end
 
 group :test do

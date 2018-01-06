@@ -1,42 +1,16 @@
-<% if @event.errors.any? %>
-  <% @event.errors.full_messages.each do |message| %>
-  <h3>Please fix the following errors:</h3>
-    <ul>
-      <li><%= message %></li>
-    </ul>
-  <% end %>
-<% end %>
+<%= simple_form_for event do |f| %>
+  <%= f.input :title %>
 
-<%= form_for event do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+  <%= f.input :description %>
 
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+  <%= f.input :start_date, as: :datetime, start_year: Date.today.year, ampm: true, order: [:day, :month, :year] %>
 
-  <div>
-    <%= f.label :start_date %>
-    <%= f.datetime_select(:start_date, order: [:day, :month, :year], start_year: Date.current.year, ampm: true) %>
-  </div>
+  <%= f.input :end_date, as: :datetime, start_year: Date.today.year, ampm: true, order: [:day, :month, :year] %>
 
-  <div>
-    <%= f.label :end_date %>
-    <%= f.datetime_select(:end_date, order: [:day, :month, :year], start_year: Date.current.year, ampm: true) %>
-  </div>
+  <%= f.input :venue %>
 
-  <div>
-    <%= f.label :venue %>
-    <%= f.text_field :venue %>
-  </div>
+  <%= f.input :location %>
 
-  <div>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-
-  <%= f.submit %>
+  <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
+  <%= link_to 'Cancel', root_path, class: 'btn btn-default btn-sm' %>
 <% end %>

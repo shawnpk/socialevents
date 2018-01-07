@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .events h3.event-title {
   margin: 0 0 5px 0;
-  color: #e0336b;
+  color: #b2312b;
   font-size: 18px;
   font-weight: 400px;
   line-height: 22px;
@@ -29,7 +29,7 @@
 .sidebar .organizer,
 .sidebar .tags,
 .sidebar .attendees,
- /*.sidebar.likes,*/
+.sidebar .likes,
  #like, #dislike,
 .comments,
 .event-end {
@@ -82,13 +82,13 @@
   }
 }
 
-// .sidebar .likes {
-//   font-size: 24px;
+.sidebar .likes {
+  font-size: 24px;
 
-//   &:before {
-//     @extend .fa-heart;
-//   }
-// }
+  &:before {
+    @extend .fa-heart;
+  }
+}
 
 #like {
   font-size: 24px;
@@ -176,13 +176,13 @@ a #dislike,
 
 h1#show-title,
 .event-details h3 {
-  color: #d91e60;
+  color: #b2312b;
 }
 
 .event-meta {
   // margin: 0 -20px 20px;
   padding: 20px;
-  background: #f23677;
+  background: #b2312b;
   color: #fff;
 }
 
@@ -192,7 +192,7 @@ h1#show-title,
   margin-top: 20px;
   margin-bottom: 15px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #e6e6e6; 
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .search h4 {
@@ -204,13 +204,13 @@ h1#show-title,
   color: #2d2d2d;
 }
 
-// .nav > li > a:hover, 
+// .nav > li > a:hover,
 // .nav > li > a:focus {
 //   background: #e0336b;
 // }
 
-.nav-pills > li.active > a, 
-.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
    background: #e0336b;
    font-weight: bold;

@@ -44,7 +44,9 @@
                 <span class="event-start">
                   <%= format_date(event.start_date) %>
                 </span>
-                <span class="pull-right">Organized by: <%=  %></span>
+                <span class="pull-right">Organized by:
+                  <strong><%= event.organizer %></strong>
+                </span>
               </p>
             </div>
           </div>

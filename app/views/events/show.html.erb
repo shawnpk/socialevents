@@ -39,7 +39,7 @@
       <h4 class="organizer">Organizer name</h4>
       <p>
         <span class="event-venue">
-          <%= @event.venue %>
+          <%= @event.venue %>, 
           <strong><%= @event.location %></strong>
         </span>
       </p>
@@ -65,4 +65,4 @@
   </div>
 </div>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', root_path, class: 'btn btn-default btn-sm' %>

@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def to_s
     "#{username}"
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

@@ -1,24 +1,31 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :authorize_owner!, only: [:edit, :udate, :destroy]
+  # before_action :authorize_owner!, only: [:edit, :udate, :destroy]
 
   def index
     @events = Event.all.order(:start_date)
+    authorize @events, :index?
   end
 
   def show
+    authorize @event, :show?
   end
 
   def new
     @event = Event.new
+    authorize @event, :new?
   end
 
   def edit
+    authorize @event, :edit?
   end
 
   def create
     @event = Event.new(event_params)
+
+    authorize @event, create?
+
     @event.organizer = current_user
 
     if @event.save
@@ -31,6 +38,8 @@ class EventsController < ApplicationController
   end
 
   def update
+    authorize @event, :update?
+
     if @event.update(event_params)
       flash[:notice] = 'Event successfully updated.'
       redirect_to @event
@@ -41,6 +50,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    authorize @event, :destroy?
+
     @event.destroy
     flash[:alert] = 'The event has been deleted.'
     redirect_to root_path
@@ -59,12 +70,12 @@ class EventsController < ApplicationController
         redirect_to events_url
     end
 
-    def authorize_owner!
-      authenticate_user!
-
-      unless @event.organizer == current_user
-        flash[:alert] = "You do not have permission to '#{action_name}' the '#{@event.title.upcase}' event."
-        redirect_to events_url
-      end
-    end
+    # def authorize_owner!
+    #   authenticate_user!
+    #
+    #   unless @event.organizer == current_user
+    #     flash[:alert] = "You do not have permission to '#{action_name}' the '#{@event.title.upcase}' event."
+    #     redirect_to events_url
+    #   end
+    # end
 end

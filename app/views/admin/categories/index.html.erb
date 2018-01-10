@@ -27,7 +27,7 @@
         <td><%= format_date(category.created_at) %></td>
         <td><%= 'Events' %></td>
         <td>
-          <%= link_to "View", "#", class: 'btn btn-primary btn-xs' %>
+          <%= link_to "View", category_path(category), class: 'btn btn-primary btn-xs' %>
           <%= link_to "Edit", edit_admin_category_path(category), class: 'btn btn-info btn-xs' %>
           <%= link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
         </td>

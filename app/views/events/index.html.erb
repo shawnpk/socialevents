@@ -13,6 +13,11 @@
         <li class="<%= "active" if current_page?("/events") %>">
           <%= link_to 'ALL EVENTS', events_path %>
         </li>
+        <% @categories.each do |category| %>
+          <li class="<%= "active" if current_page?("/categories/#{category.id}") %> text-uppercase">
+            <%= link_to category.name.upcase, category_path(category) %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

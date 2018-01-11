@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # before_action :authorize_owner!, only: [:edit, :udate, :destroy]
 
   def index
-    @events = Event.all.order(:start_date)
+    @events = Event.all.order('start_date DESC' )
     @categories = Category.order(:name)
     authorize @events, :index?
   end
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
-    authorize @event, create?
+    authorize @event, :create?
 
     @event.organizer = current_user
 
@@ -60,7 +60,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:title, :description, :start_date, :end_date, :venue, :location)
+      params.require(:event).permit(:title, :description, :start_date, :end_date, :venue, :location, :image)
     end
 
     def set_event

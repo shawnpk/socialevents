@@ -11,7 +11,7 @@
 
 <div class="row">
   <div class="col-sm-9">
-    <%= image_tag "home-office.jpg", class: 'event-image' %>
+    <%= image_tag @event.image, class: 'event-image' if @event.image %>
 
     <div class="event-meta">
       <h4>

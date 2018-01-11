@@ -13,6 +13,8 @@
 
       <%= f.input :location %>
 
+      <%= f.input :image, as: :file, label: 'Upload Event Image' %>
+
       <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
       <%= link_to 'Cancel', root_path, class: 'btn btn-default btn-sm' %>
     <% end %>

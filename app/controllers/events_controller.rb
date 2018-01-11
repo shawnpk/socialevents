@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # before_action :authorize_owner!, only: [:edit, :udate, :destroy]
 
   def index
-    @events = Event.all.order('start_date DESC' )
+    @events = Event.order('start_date DESC' )
     @categories = Category.order(:name)
     authorize @events, :index?
   end
@@ -64,7 +64,7 @@ class EventsController < ApplicationController
     end
 
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.friendly.find(params[:id])
 
       rescue ActiveRecord::RecordNotFound
         flash[:alert] = 'The page you requested does not exist.'

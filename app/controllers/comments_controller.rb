@@ -1,9 +1,13 @@
 class CommentsController < ApplicationController
-  skip_after_action :verify_authorized
+  before_action :authenticate_user!
+  # skip_after_action :verify_authorized
 
   def create
     @event = Event.friendly.find(params[:event_id])
     @comment = @event.comments.build(comment_params)
+    @comment.author = current_user
+
+    authorize @comment, :create?
 
     if @comment.save
       flash[:notice] = 'Your comment has been added to this event.'

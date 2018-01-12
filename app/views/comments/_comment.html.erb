@@ -2,6 +2,11 @@
   <%= simple_format(comment.body) %>
 
     <footer>
+      <% if comment.author %>
+        by <strong>
+          <cite><%= comment.author.full_name %></cite>
+        </strong>
+      <% end %>
       <%= time_ago_in_words(comment.created_at) %> ago
     </footer>
 </blockquote>

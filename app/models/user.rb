@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_many :organized_events, class_name: 'Event', dependent: :destroy
 
+  validates :username, presence: true, length: { minimum: 6 }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

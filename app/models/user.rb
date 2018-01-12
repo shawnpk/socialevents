@@ -3,6 +3,8 @@ class User < ApplicationRecord
   friendly_id :username
 
   has_many :organized_events, class_name: 'Event', dependent: :destroy
+  has_many :attendances
+  has_many :attended_events, through: :attendances
 
   validates :username, presence: true, length: { minimum: 6 }
 

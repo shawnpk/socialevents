@@ -23,6 +23,8 @@
                   label: 'Select Category',
                   prompt: true %>
 
+      <%= f.input :seats, label: 'Event Capacity', hint: 'Number of attendees to the event' %>
+
       <%= f.input :image, as: :file, label: 'Upload Event Image' %>
 
       <%= f.button :submit, class: 'btn btn-primary btn-sm' %>

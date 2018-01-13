@@ -23,4 +23,9 @@ module ApplicationHelper
   def admin_only(&block)
     block.call if current_user.try(:admin?)
   end
+
+  def avatar_url(user)
+    hash = Digest::MD5.hexdigest(user.email.downcase)
+    "https://www.gravatar.com/avatar/#{hash}"
+  end
 end

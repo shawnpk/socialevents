@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   devise_for  :users
   resources   :users,       only: [:show]
   resources   :categories,  only: [:show]
+  resources   :tags,        only: [:show]
 
   resources   :events do
     resources   :comments,    only: [:create]

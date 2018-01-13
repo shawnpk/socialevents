@@ -1,5 +1,13 @@
+<div class="col-sm-12">
+  <header>
+    <h1>Dashboard <small>Control Panel</small></h1>
+  </header>
+
+  <h4>Welcome to Admin Dashboard of SocialEvents</h4>
+</div>
+
 <div class="row">
-  <div class="col-sm-3 admin">
+  <div class="col-sm-12 admin">
     <div class="admin-sidebar">
       <div class="user-panel text-center">
         <div class="pull-left image">
@@ -18,58 +26,51 @@
         <%= link_to admin_users_path do %>
           <%= fa_icon 'users' %>
           <span>Users</span>
-          <span class="label label-primary pull-right"><%= @users.count %></span>
+          <span class="label label-primary pull-right lb-md"><%= @users.count %></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_categories_path do %>
           <%= fa_icon 'th' %>
           <span>Categories</span>
-          <span class="label label-info pull-right"><%= @categories.count %></span>
+          <span class="label label-info pull-right lb-md"><%= @categories.count %></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_attendances_path do %>
           <%= fa_icon 'user' %>
           <span>Attendees</span>
-          <span class="label label-danger pull-right"><%= @attendances.count %></span>
+          <span class="label label-danger pull-right lb-md"><%= @attendances.count %></span>
         <% end %>
       </li>
       <li>
         <%= link_to events_path do %>
           <%= fa_icon 'calendar' %>
           <span>Events</span>
-          <span class="label label-warning pull-right"><%= @events.count %></span>
+          <span class="label label-warning pull-right lb-md"><%= @events.count %></span>
         <% end %>
       </li>
       <li>
         <%= link_to "#" do %>
           <%= fa_icon 'tag' %>
           <span>Tags</span>
-          <span class="label label-default pull-right"><%= @tags.count %></span>
+          <span class="label label-default pull-right lb-md"><%= @tags.count %></span>
         <% end %>
       </li>
       <li>
         <%= link_to admin_comments_path do %>
           <%= fa_icon 'comments' %>
           <span>Comments</span>
-          <span class="label label-primary pull-right"><%= @comments.count %></span>
+          <span class="label label-primary pull-right lb-md"><%= @comments.count %></span>
         <% end %>
       </li>
       <li>
         <%= link_to "#" do %>
           <%= fa_icon 'heart' %>
           <span>Likes</span>
-          <span class="label label-danger pull-right"><%= @likes.count %></span>
+          <span class="label label-danger pull-right lb-md"><%= @likes.count %></span>
         <% end %>
       </li>
     </ul>
-  </div>
-  <div class="col-sm-9">
-    <header>
-      <h1>Dashboard <small>Control Panel</small></h1>
-    </header>
-
-    <h4>Welcome to Admin Dashboard of SocialEvents</h4>
   </div>
 </div>

@@ -54,6 +54,7 @@ group :development do
   gem 'capybara', '~> 2.17'
 end
 
+# User added gems
 group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
 end

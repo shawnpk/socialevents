@@ -25,7 +25,7 @@
       <tr>
         <td><%= category.name %></td>
         <td><%= format_date(category.created_at) %></td>
-        <td><%= 'Events' %></td>
+        <td><%= category.events.count %></td>
         <td>
           <%= link_to "View", category_path(category), class: 'btn btn-primary btn-xs' %>
           <%= link_to "Edit", edit_admin_category_path(category), class: 'btn btn-info btn-xs' %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'events#index'
+  root 'home#index'
 
   namespace :admin do
     root 'application#index'

@@ -34,15 +34,15 @@
           </li>
           <% end %>
       </ul>
-      <%= form_tag events_path, method: :get, class: "navbar-form navbar-left" do %>
+      <!-- <%#= form_tag events_path, method: :get, class: "navbar-form navbar-left" do %>
         <div class="form-group">
-          <%= text_field_tag :query, params[:query], placeholder: "Search events here...", class: "form-control" %>
-          <%= submit_tag "Find", class: 'btn btn-default' %>
-          <% if params[:query].present? %>
-            <%= link_to "Clear", events_path, class: 'btn btn-danger' %>
-          <% end %>
+          <%#= text_field_tag :query, params[:query], placeholder: "Search events here...", class: "form-control" %>
+          <%#= submit_tag "Find", class: 'btn btn-default' %>
+          <%# if params[:query].present? %>
+            <%#= link_to "Clear", events_path, class: 'btn btn-danger' %>
+          <%# end %>
         </div>
-      <% end %>
+      <%# end %> -->
       <!-- <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
